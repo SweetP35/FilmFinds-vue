@@ -1,1 +1,1 @@
-# FilmFinds-vue
+После клонирования репозитория, необходимо в папке my-strapi-project переименовать файл .env.example в .env
