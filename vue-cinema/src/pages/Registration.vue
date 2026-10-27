@@ -144,7 +144,6 @@ const submitForm = async () => {
 	if (!errors.value.email && !errors.value.password && !errors.value.confirmPassword) {
 		try {
 			const response = await fetchData('http://localhost:1337/api/auth/local/register', 'post', { username: email.value, email: email.value, password: password.value }, false)
-			console.log(response);
       errors.value.general = 'Форма успешно отправлена'
 			router.push('/auth/login')
 		} catch (e) {

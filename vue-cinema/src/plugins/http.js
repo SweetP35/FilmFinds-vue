@@ -1,5 +1,5 @@
 import axios from 'axios'
-const TOKEN = '576928f2-fadc-479f-83a5-27b778ea6454'
+const TOKEN = import.meta.env.VITE_KINOPOISK_KEY
 
 export const fetchData = async (url, method = 'get', params = {}, useHeaders = true) => {
 	try {
@@ -13,7 +13,6 @@ export const fetchData = async (url, method = 'get', params = {}, useHeaders = t
 				'Content-Type': 'application/json',
 			}
 		}
-		console.log(params)
 		const response = await axios[method](url, { ...config, ...data })
 		return response
 	} catch (error) {

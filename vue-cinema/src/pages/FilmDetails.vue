@@ -64,7 +64,7 @@
 								Длительность: <span>{{ film.filmLength ? film.filmLength + ' мин.' : 'Нет информации' }}</span>
 							</div>
 							<div class="film-details__item">
-								Возраст: <span>{{ film.ratingAgeLimits ? film.ratingAgeLimits.replace('age', '') + '+' : 'Нет информации' }}+</span>
+							  Возраст: <span>{{ film.ratingAgeLimits ? film.ratingAgeLimits.replace('age', '') + '+' : 'Нет информации' }}</span>
 							</div>
 							<div class="film-details__item">
 								Страны: <span
@@ -115,8 +115,6 @@ const isFavorite = computed(() => {
 	const favorite = (auth.value.favorites || []).find(favorite => favorite.kinopoiskId === film.value.kinopoiskId)
 	return favorite !== undefined
 })
-console.log(filmId)
-console.log(auth.value.favorites)
 
 const toggleFavorite = async() => {
 	let favorites = auth.value.favorites

@@ -46,33 +46,8 @@ const pages = ref([])
 const totalPages = computed(() => pages.value.length)
 const currentMovies = ref(pages.value[0])
 
-
-
-
-
-
-
-// const isFavorite = computed(() => {
-// 	const favorite = movies.value.find(favorite => favorite.kinopoiskId === filteredMovies.value.kinopoiskId)
-// 	return favorite !== undefined
-// })
-
-// const toggleFavorite = async () => {
-// 	if (isFavorite.value) {
-// 		movies.value = movies.value.filter(movie => movie.kinopoiskId !== filteredMovies.value.kinopoiskId)
-// 	} else {
-// 		movies.value.push(filteredMovies.value)
-// 	}
-// 	await fetchData(`http://localhost:1337/api/users/${user.value.id}`, 'put', { favorites: movies.value })
-// 	store.commit('setUser', { ...user.value, favorites: movies.value })
-// }
-
-// toggleFavorite()
-
 watch(movies, () => {
 	getArrayPages(movies.value)
-	console.log(pages.value)
-
 	updateFavorite()
 })
 
